@@ -303,7 +303,7 @@ This example illustrates the fundamental logic of our information fusion framewo
 
 \begin{definition}[Information Fusion]
 \label{def:infoagg}
-Let \( S_1 \) and \( S_2 \) be two unit selection variables of the population $\mathcal{U}$. The Information fusion of \( S_1 \) and \( S_2 \), denoted as \( S_1 \odot S_2 \), is defined as a unit selection variable \( S \) whose distribution $p(u)$ satisfies:
+Let \( S_1 \) and \( S_2 \) be two unit selection variable of the population $\mathcal{U}$. The Information fusion of \( S_1 \) and \( S_2 \), denoted as \( S_1 \odot S_2 \), is defined as a unit selection variable \( S \) whose distribution $p(u)$ satisfies:
 \begin{equation}
 \label{eq:infoagg}
     p(u) \propto p_{1}(u) p_{2}(u)
@@ -690,8 +690,6 @@ P(Y(x)=y|e) = \sum_u P(y_x;u) P(u|e),
 
 
 Notice that in the DiscoSCM framework, the counterfactual outcome $Y_u^d(t)$ is still a random variable that equals in distribution to $Y_u$, rather than a constant $y$, when observing $X_u = x, Y_u = y$ for an individual $u$. In other words, it can conceptually be seen as an extension of the two preceding frameworks, achieved by replacing the traditional consistency rule with a distribution-consistency rule.
-
-
 
 
 \end{document}

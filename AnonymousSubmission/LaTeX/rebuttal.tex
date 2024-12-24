@@ -1,0 +1,271 @@
+%File: anonymous-submission-latex-2025.tex
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+% \usepackage[submission]{aaai25}  % DO NOT CHANGE THIS
+\usepackage{times}  % DO NOT CHANGE THIS
+\usepackage{helvet}  % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in} % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in} % DO NOT CHANGE THIS
+
+% Add Chinese support
+\usepackage{CJKutf8}
+
+% Keep essential packages
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{stackengine}
+\usepackage{tikz}
+\usetikzlibrary{arrows, fit, backgrounds, positioning} 
+\usepackage{tcolorbox}
+
+% Keep theorem definitions
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{asmp}[theorem]{Assumption}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{property}[theorem]{Property}
+
+\def\delequal{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
+
+\setcounter{secnumdepth}{0}
+
+\pdfinfo{
+/TemplateVersion (2025.1)
+}
+
+\title{A Novel Information Fusion Framework Based on a Simple Stochastic Aggregation Operator with Applications in Decision-Making}
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}  % Start CJK environment
+
+\maketitle
+\onecolumn
+
+
+\section{Rebuttal}
+
+\subsubsection{Reviewer 1: Interesting work}
+
+%  Reviewer 1 的具体意见
+
+The paper proposes a novel framework for information fusion using a simple yet mathematically robust stochastic aggregation operator. This approach offers a practical and theoretically elegant alternative to traditional Bayesian methods, focusing on customized measurable spaces for specific decision-making scenarios. The paper is well-written, with clear explanations of its objectives, mathematical foundations, and practical applications. The aggregation operator introduced in the paper is theoretically grounded, exhibiting beneficial properties such as commutativity, associativity, and inverse elements in the form of an Abelian group structure.
+
+% 中文翻译
+该论文提出了一种新颖的信息融合框架，使用简单但数学上强大的随机聚合算子。这种方法为传统的贝叶斯方法提供了一种实用且理论上优雅的替代方案，侧重于针对特定决策场景定制的可测空间。论文写作清晰，明确阐述了其目标、数学基础和实际应用。论文中引入的聚合算子在理论上具有良好的基础，表现出有益的特性，如可交换性、可结合性和逆元素，形成阿贝尔群结构。
+
+Here are my comments/questions:
+
+\begin{itemize}
+\item Can $F_i$ be discontinuous?
+
+\item Intuition Behind Stochastic Aggregation: Why do the authors regard Definition (2) as the "simplest" aggregation method? An explanation would help establish its suitability over other potential operators for probabilistic aggregation.
+
+\item  Application in Non-location Quantities: The paper could benefit from a discussion on how this framework can be applied to cases where non-location quantities (e.g., variance or skewness) are of interest. This would broaden the framework's applicability and demonstrate its versatility.
+
+\item In Example 5, it would be helpful to explain the impact if observations are not i.i.d. (independent and identically distributed), as this could alter the assumptions around aggregation and the resulting distributions.
+\end{itemize}   
+
+% 我感觉这个还是比较好回复的, 
+
+% 感谢 Reviewer 1 的认真审阅和宝贵意见.
+
+% 第1个问题，其实我们的例5中的场景, 信息可以使用 probability on 全部用户构成的离散空间来表示, 所以其概率分布是离散的.
+% 第2个问题, 我们可以解释一下, 为什么我们认为这个定义是最简单的, 我们是要把多个概率分布聚合成一个概率分布, 嗯，那么这些概率分布的直接相乘或者相加就是最简单的数学公式. 但是相加的话, 均匀分布就不再是该运算的单位元了, 数学性质就不好了. 所以我们相乘是这个意义下最简单的融合方式了. 
+
+% comments 的话, 我们表示感谢就行了. 
+
+We sincerely thank Reviewer 1 for their careful review and insightful comments. We are pleased that the reviewer recognizes the theoretical grounding and beneficial properties of our framework. Let us address each question in turn:
+
+Regarding the continuity of $F_i$:
+Indeed, from the perspective of probability measure theory, $F_i$ can be discontinuous. In fact, as demonstrated in Example 5, information can be represented as probability distributions over a discrete space (the space of all users in a platform), resulting in discrete probability distributions.
+
+On the intuition behind Definition (2) being the "simplest" aggregation method:
+When seeking to aggregate multiple probability distributions into a single distribution, the most elementary mathematical operations to consider are addition and multiplication. While addition might seem simple, it fails to preserve crucial mathematical properties - notably, the uniform distribution would not serve as the identity element. In contrast, multiplication (followed by normalization) maintains desirable mathematical properties while remaining operationally simple. This makes it the simplest aggregation method that preserves the essential algebraic structure (Abelian group) needed for meaningful information fusion.
+
+Regarding application to non-location quantities:
+We thank the reviewer for this interesting suggestion about extending the framework to non-location quantities. This might be a valuable direction for future research.
+
+
+On non-i.i.d observations in Example 5:
+For non-independent observations, we acknowledge this would introduce additional complexity. However, one possible approach is to adapt our framework similarly to Example 16, where we first remove common information before performing information fusion.
+
+We appreciate these thoughtful questions and comments as they help clarify important aspects of our framework.
+
+\subsubsection{Reviewer 2: Interesting paper}
+
+The paper proposes a novel information fusion framework that moves away from the Bayesian perspective, making use of so-called stochastic aggregation operators. First, the tackled research question and consequent proposal is very interesting and promising. The paper is well-written, and mathematically clean. The simplicity of the proposal is indeed a positive aspect (as the authors highlight themselves).
+
+% 翻译
+该论文提出了一种新颖的信息融合框架，摆脱了贝叶斯观点，利用所谓的随机聚合算子。首先，所处理的研究问题及随后的提议非常有趣且具有前景。论文写作清晰，数学上干净。提议的简单性确实是一个积极的方面（正如作者们自己强调的那样）。
+
+
+
+The theoretical framework would benefit from additional empirical validation, demonstrating its claimed computational benefits over Bayesian methods (there seems to be also space for this in the paper itself, hence the paper not suffering from lack of space).
+
+It would be helpful, if the authors could elaborate on limitations, if any. This is not necessarily evident from the submission itself.
+
+How does this work on information fusion relate to fundamental statistical questions, such as "merging p-values" and the like? It feels like that there is subtle relation (from classical statistical theory we know that not every merging function is admissible for p-values for example, it would be interesting if this line of research also somehow fits in the one proposed by the authors; this comment should be taken with a grain of salt though).
+
+How does the operator perform with multimodal distributions? If two distributions with different modes are fused, does the framework preserve this multimodality, or does it tend toward averaging?
+
+Another question is, if the Abelian group structure is compromised (e.g., in a case with dependency structures), can the framework adapt, or would it require a fundamentally different approach?
+
+Final question is concerning the measurable spaces itself: Since the measurable space is tailored to the decision context, could this "selection bias" influence fusion outcomes?
+
+Minor remarks:
+
+Maybe the numbering should be adapted to different theorem environments itself (thus, starting with Example 1 etc.). But this is just a matter of taste.
+
+Indention after (5) does not look very good.
+
+For my taste, the language feels a little to exaggerated for a scientific paper (too much cherishing the own results with strong adjectives as "excellent" and similar). While this is fine, I would use moderate, scientific language.
+
+My overall assessment of the paper is very positive. I think it provides a novel, simple perspective on information fusion. Also, I appreciate the mathematical clarity. I am happy if the authors could elaborate on my questions/remarks to further clarify some remaining doubts.
+
+
+
+
+% We sincerely thank Reviewer 2 for their appreciation of our work, thorough review, and constructive feedback. We are pleased that the reviewer recognizes the novelty and mathematical clarity of our framework.
+
+% Relationship with P-value Merging:
+% Our framework currently focuses on probability distributions rather than p-values. One potential direction could be transforming p-values into probability distributions with designed abduction methods and then applying our fusion framework. 
+
+% Multimodal Distributions:
+% Since our information fusion is based on multiplication of probability densities, mathematically, regions with high density in the original distributions will maintain relatively high density in the fused distribution under the assumption that lower density areas are relatively uniform. Therefore, our framework tends to preserve different modes when fusing distributions with different modalities.
+
+% Abelian Group Structure and Dependencies:
+% For dependent structures, Example 16 demonstrates how our framework handles multiple related forecasts information. By first removing common information before performing information fusion, we adapt to dependency structures. Specifically, in Equation (16), the common information $S$ serves as the identity element in the new aggregating operation - if any $F_i$ equals the common information $S$, incorporating this prediction should not alter $F_{agg}$. However, we acknowledge that more complex dependency structures might require further exploration.
+
+% Measurable Space Selection:
+% The choice of measurable space indeed influences information representation, but this is actually a crucial feature of our framework. In Example 5, we choose the space of all users as the measurable space, where information is represented as distributions over this space, and evidence/observation $y$ is transformed into information $U(y)$ through causal model abduction algorithms. In large language models, where next token prediction is the primary mechanism, DPO operates on the token space. Here, information is represented as $\pi(\cdot|x)$, and the reward $r(x,\cdot)$ is transformed into a probability distribution using a parametrized Boltzmann exploration probability distribution. This raises an natural question: could there be alternative methods for reward abduction in DPO beyond the Boltzmann exploration probability distribution? 
+
+% These examples illustrate that while our fusion operator is mathematically simple and intuitive, the process of selecting appropriate measurable spaces and representing various forms of information (evidence, rewards, etc.) as probability distributions can be complex.
+
+% Minor Points:
+% - We will revise the theorem/example numbering for better consistency
+% - The indentation after (5) will be fixed
+% - We appreciate the suggestion about language and will moderate our use of adjectives to maintain a more neutral scientific tone
+
+% We thank the reviewer again for these valuable suggestions that will help improve the paper's clarity and completeness.
+
+
+We sincerely thank Reviewer 2 for their appreciation of our work, thorough review, and constructive feedback.
+
+Relationship with P-value Merging: 
+One potential direction might be transforming p-values into probability distributions with designed abduction methods and then applying our fusion framework. 
+
+Multimodal Distributions:
+Since our information fusion is based on multiplication of probability densities, mathematically, regions with high density in the original distributions will maintain relatively high density in the fused distribution under the assumption that lower density areas are relatively uniform. Therefore, our framework tends to preserve different modes when fusing distributions with different modalities.
+
+Abelian Group Structure and Dependencies:
+For dependent structures, Example 16 demonstrates how our framework handles multiple related forecasts information. By first removing common information before performing information fusion, we adapt to dependency structures. Specifically, in Equation (16), the common information $S$ serves as the identity element in the new aggregating operation - if any $F_i$ equals the common information $S$, incorporating this prediction should not alter $F_{agg}$. However, we acknowledge that more complex dependency structures might require further exploration.
+
+Measurable Space Selection:
+The choice of measurable space indeed influences information representation, but this is actually a feature of our framework. In Example 5, we choose the space of all users as the measurable space, where information is represented as distributions over this space, and evidence/observation $y$ is transformed into information $U(y)$ through causal model abduction algorithms. In the DPO setting that operates on the token space, the reward $r(x,\cdot)$ is transformed into a probability distribution using a parametrized Boltzmann exploration probability distribution. This raises a natural question: could there be alternative methods for reward abduction in DPO beyond the Boltzmann distribution? 
+
+These examples illustrate that while our fusion operator is simple, the process of selecting appropriate measurable spaces and representing various forms of information (evidence, rewards, etc.) as probability distributions can be complex.
+
+We will make sure our claims in a more neutral scientific tone. We thank the reviewer again for their valuable suggestions.
+
+
+\subsubsection{Reviewer 3}
+
+
+This paper presents a method of information fusion using "copula" by using Skla's theorem. It defines a product of two measures as an information fusion operator and shows that the operator satisfies the commutative group property. The paper also sketches a few ideas about possible applications.
+
+% 翻译
+本文提出了一种使用“copula”通过使用Skla定理进行信息融合的方法。它将两个度量的乘积定义为信息融合算子，并表明该算子满足交换群属性。本文还勾勒了一些关于可能应用的想法。
+
+It is interesting to see the choice of viewing the distribution in Theorem 1, which is used widely in quantitative finance. This reminds me of the variational methods in probabilistic models that approximate joint distributions with marginals.
+
+Questions 1. Although the joint is expressed by marginals, we still need to know the copula, which is defined over all variables. How does this form give advantages?
+
+Question 2. Valuation algebra follows the semi-ring with the two operators, the product and the marginalization. In this framework, the operators are only given as a single product operator, and the task is updating the belief. It is unclear how this choice leads to advantages. Can you provide more details about this? For example, valuation algebra grounds the message-passing algorithms over graphical models. How could the proposed framework be implemented?
+
+Question 3. Why does the exponential family have interpretability issues?
+
+This paper shows examples with causal graphical models or DPO. However, it doesn't show any concrete results but a sketch of ideas.
+
+
+
+% 回复思路
+We sincerely thank Reviewer 3 for their comments and for giving us the opportunity to clarify some misunderstandings.
+
+We respectfully note that the reviewer's understanding that "This paper presents a method of information fusion using 'copula' by using Skla's theorem" is incorrect. While we mention copulas and Sklar's theorem in the preliminaries section when discussing existing approaches, our framework presents a distinctive alternative to traditional methods of information fusion. One key innovation of our work lies in customizing appropriate measurable spaces and abduction method for information representation in specific decision-making scenarios.
+
+This fundamental difference in approach means that we do not need to specify copulas of joint distributions. Instead, our framework offers a more direct and intuitive way to fuse information while maintaining desirable mathematical properties.
+
+We apologize for any aspects of our presentation that may have led to this misunderstanding. We will revise the relevant sections to make the distinctions clearer.
+
+
+
+\subsubsection{Reviewer 4}
+
+The paper revisits a stochastic aggregation operation (the stochastic product operator), for probability distributions, and extends it to random variables thus providing a natural information fusion method grounded in algebraic structures. The authors claim that the stochastic product thus introduced has desirable properties, for instance, the existence of inverse elements, thus entailing a group structure for information aggregators. The authors illustrate their proposal on the concrete problem aggregating probability distributions from diverse sources, namely, the analyst forecast fusion problem in a decision support context.
+
+% 翻译
+本文重新审视了概率分布的随机聚合运算（随机乘法算子），并将其扩展到随机变量，从而提供了一种基于代数结构的自然信息融合方法。作者声称，因此引入的随机乘法具有理想的性质，例如，存在逆元素，从而为信息聚合器提供了群结构。作者在具体问题上说明了他们的提议，即从不同来源聚合概率分布的问题，即决策支持上的分析师预测融合问题。
+
+Strengths and Weaknesses:
+
+The paper addresses the challenging problem of aggregating probability distributions that may come from different sources. This problem has been addressed in the literature by leveraging Bayesian approaches. The novelty of the paper seems to reside in the adaptation of aggregation operators for fusing probability distributions. It then relies on existing formalisms such as the causal framework DiscoSCM (Gong, Lu, and Zhang 2024).
+
+As for the quality, soundness and originality of results, there are very few (if any) novel results comparing to those in: -Gong, H.; Lu, C.; and Zhang, Y. 2024. consistency Structural Causal Models. arXiv:2401.15911. -Gong, H. 2024. An Information Aggregation Operator. arXiv:2401.15867v2
+
+In fact, this paper seems to greatly overlap with the latter, and both raise some doubts due to unjustified claims, e.g.: 
+\begin{itemize}
+\item Claims concerning the superior computational efficiency of the proposed approach over the Bayesian one.
+\item Claims that the proposed information fusion method is the "most intuitive and mathematically simplest approach available"
+\item Proof of Property 10 in Theorem 11, namely, existence and unicity of "inverse" probability distributions", and its use in Example 16.3. 
+\item Claims of higher interpretability with respect to the Bayesian framework.
+\end{itemize}
+
+As for the clarity, the paper is fairly well written, but it is rather superficial in the analysis of results and the conclusions thus derived. Also, the reference to a detailed discussion in the Appendix could not be found. Furthermore, some references should be added, e.g., at the end of 1st column of page 6, and others in the bibliography should be updated.
+
+Also, the paper deals with the interesting challenge of multi sourced information fusion in decision support settings. However, the lack of empirical studies to substantiate and illustrate the many claims in the paper, constitutes another major weakness of the paper, and thus with limited impact in the general AI community.
+
+
+
+
+% 回复思路
+
+
+We sincerely thank Reviewer 4 for their thorough review and constructive feedback.
+
+
+We appreciate the reviewer's careful reading of related literature. We note that placing preprints on public servers like arXiv is a common practice in the research community to facilitate early scientific discussion. Concerns about originality of results will naturally be resolved after the double-blind review process.
+
+
+On Unjustified Claims: 
+我们会仔细检查您提的每一个 claim, 数学上 claim for  existence and unicity 会给出更加严格的数学证明, 对于哪些 conceptual claims, we will moderate our use of adjectives to maintain a more neutral scientific tone to avoid exaggeration.
+
+
+We will also ensure that all references are correctly cited and that the appendix is appropriately referenced. We will also consider adding empirical studies to further substantiate our claims and demonstrate the practical utility of our framework.
+
+
+
+We sincerely thank Reviewer 4 for their thorough review and constructive feedback.
+
+Regarding overlap with arXiv preprints: We note that placing preprints on public servers like arXiv is a common practice in the research community to facilitate early scientific discussion. Any concerns about originality of results will naturally be resolved after the double-blind review process concludes.
+
+
+Regarding the mentioned claims: 1) For mathematical claims, we will provide more rigorous mathematical proofs for the existence and uniqueness properties in Theorem 11; 2) For other conceptual claims about computational efficiency and interpretability, we will provide more detailed justification, while moderating our language to maintain a more neutral scientific tone and avoid possible exaggeration.
+
+
+We will ensure all references are correctly cited and the appendix is properly referenced. We appreciate the suggestion about adding empirical studies and will consider incorporating them to further demonstrate our framework's practical utility.
+
+
+
+\subsection{Overall Response}
+
+\end{CJK*}  % End CJK environment
+\end{document}
